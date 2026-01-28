@@ -13,5 +13,19 @@
   "scripts": {
     "build": "mkdir -p dist && cp src/*.css dist/",
     "dev": "npm run build"
-  }
+  },
+  "keywords": [
+    "design-system",
+    "design-tokens",
+    "css",
+    "artivism"
+  ],
+  "author": "artivism",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/artivism/design-system.git",
+    "directory": "packages/tokens"
+  },
+  "homepage": "https://design.artivism.it"
 }
