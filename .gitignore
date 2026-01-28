@@ -1,0 +1,14 @@
+node_modules/
+dist/
+.next/
+out/
+build/
+.turbo/
+*.log
+.DS_Store
+.env*.local
+.cache/
+coverage/
+
+# Local documentation
+guide.md

@@ -1,0 +1,30 @@
+{
+  "name": "artivism-design-system",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace=apps/design",
+    "dev:all": "npm run dev --workspaces --if-present",
+    "build": "npm run build --workspaces --if-present",
+    "build:design": "npm run build --workspace=apps/design",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "test": "echo \"No tests yet\"",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,css,md}\"",
+    "changeset": "changeset",
+    "version-packages": "changeset version",
+    "release": "npm run build && npm run version-packages && changeset publish"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.27.1",
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "@typescript-eslint/parser": "^6.21.0",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^10.1.8",
+    "prettier": "^3.2.5",
+    "typescript": "^5.3.3"
+  }
+}

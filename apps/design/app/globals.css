@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+/* Cross-package class detection - ESSENTIAL */
+@source "../../packages/ui/src/**/*.{ts,tsx}";
+@source "../../packages/tokens/src/**/*.css";
+@source "./app/**/*.{ts,tsx}";
+
+/* Import design tokens */
+@import "@artivism/tokens";

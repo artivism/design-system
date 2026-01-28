@@ -1,0 +1,17 @@
+{
+  "name": "@artivism/tokens",
+  "version": "0.1.0",
+  "description": "Design tokens for Artivism Design System",
+  "main": "./dist/index.css",
+  "exports": {
+    ".": "./dist/index.css",
+    "./base": "./dist/base.css"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "mkdir -p dist && cp src/*.css dist/",
+    "dev": "npm run build"
+  }
+}
