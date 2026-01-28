@@ -2,29 +2,27 @@
   "name": "artivism-design-system",
   "private": true,
   "workspaces": [
-    "apps/*",
-    "packages/*"
+    "packages/*",
+    "apps/*"
   ],
   "scripts": {
-    "dev": "npm run dev --workspace=apps/design",
-    "dev:all": "npm run dev --workspaces --if-present",
-    "build": "npm run build --workspaces --if-present",
-    "build:design": "npm run build --workspace=apps/design",
+    "dev": "npm run dev --workspace=@artivism/design-site",
+    "build": "npm run build --workspace=@artivism/tokens && npm run build --workspace=@artivism/ui && npm run build --workspace=@artivism/design-site",
+    "build:design": "npm run build --workspace=@artivism/design-site",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "typecheck": "npm run typecheck --workspaces --if-present",
-    "test": "echo \"No tests yet\"",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,css,md}\"",
     "changeset": "changeset",
     "version-packages": "changeset version",
-    "release": "npm run build && npm run version-packages && changeset publish"
+    "release": "npm run build && changeset publish"
   },
   "devDependencies": {
     "@changesets/cli": "^2.27.1",
-    "@typescript-eslint/eslint-plugin": "^6.21.0",
-    "@typescript-eslint/parser": "^6.21.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
     "eslint": "^8.56.0",
-    "eslint-config-prettier": "^10.1.8",
-    "prettier": "^3.2.5",
+    "eslint-config-prettier": "^9.1.0",
+    "prettier": "^3.2.4",
     "typescript": "^5.3.3"
   }
 }
