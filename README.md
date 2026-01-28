@@ -1,5 +1,7 @@
 # Artivism Design System
 
+[![Deploy](https://img.shields.io/badge/live-design--system-brightgreen)](https://design.artivism.it)
+
 Reusable design system monorepo for the Artivism ecosystem.
 
 ## Quick Start
