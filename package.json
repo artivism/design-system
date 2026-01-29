@@ -6,6 +6,7 @@
     "apps/*"
   ],
   "scripts": {
+    "predev": "npm run build --workspace=@artivism/tokens",
     "dev": "npm run dev --workspace=@artivism/design-site",
     "build": "npm run build --workspace=@artivism/tokens && npm run build --workspace=@artivism/ui && npm run build --workspace=@artivism/design-site",
     "build:design": "npm run build --workspace=@artivism/design-site",

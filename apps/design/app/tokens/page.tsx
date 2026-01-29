@@ -1,73 +1,41 @@
 export default function TokensPage() {
-  const colors = [
-    {
-      name: "surface",
-      var: "--color-surface",
-      bg: "bg-surface",
-      text: "text-text",
-    },
-    {
-      name: "surface-muted",
-      var: "--color-surface-muted",
-      bg: "bg-surface-muted",
-      text: "text-text",
-    },
-    {
-      name: "accent",
-      var: "--color-accent",
-      bg: "bg-accent",
-      text: "text-white",
-    },
-    {
-      name: "accent-hover",
-      var: "--color-accent-hover",
-      bg: "bg-accent-hover",
-      text: "text-white",
-    },
-    { name: "text", var: "--color-text", bg: "bg-text", text: "text-white" },
-    {
-      name: "text-muted",
-      var: "--color-text-muted",
-      bg: "bg-text-muted",
-      text: "text-white",
-    },
-    {
-      name: "border",
-      var: "--color-border",
-      bg: "bg-border",
-      text: "text-text",
-    },
-    { name: "error", var: "--color-error", bg: "bg-error", text: "text-white" },
-    {
-      name: "success",
-      var: "--color-success",
-      bg: "bg-success",
-      text: "text-white",
-    },
+  const artivisMColors = [
+    { name: "blackout", var: "--artivism-blackout", hex: "#121212" },
+    { name: "guerrilla", var: "--artivism-guerrilla", hex: "#1c1c1c" },
+    { name: "hijack", var: "--artivism-hijack", hex: "#212121" },
+    { name: "detour", var: "--artivism-detour", hex: "#2a2a2a" },
+    { name: "spoof", var: "--artivism-spoof", hex: "#333333" },
+    { name: "pasteup", var: "--artivism-pasteup", hex: "#666666" },
+    { name: "stickerbomb", var: "--artivism-stickerbomb", hex: "#a1a1aa" },
+    { name: "flashmob", var: "--artivism-flashmob", hex: "#d4d4d8" },
+    { name: "wheatpaste", var: "--artivism-wheatpaste", hex: "#ffffff" },
+    { name: "green", var: "--artivism-green", hex: "#66ff99" },
+    { name: "alert-red", var: "--artivism-alert-red", hex: "#ef4444" },
+    { name: "success-green", var: "--artivism-success-green", hex: "#22c55e" },
   ];
 
-  const spacing = [1, 2, 3, 4, 6, 8];
-  const typography = ["xs", "sm", "base", "lg", "xl", "2xl"];
-  const radius = ["sm", "md", "lg", "full"];
+  const semanticColors = [
+    { name: "canvas", var: "--color-canvas", maps: "blackout" },
+    { name: "surface", var: "--color-surface", maps: "guerrilla" },
+    { name: "accent", var: "--color-accent", maps: "green" },
+    { name: "text", var: "--color-text", maps: "wheatpaste" },
+    { name: "border", var: "--color-border", maps: "detour" },
+    { name: "error", var: "--color-error", maps: "alert-red" },
+  ];
 
   return (
     <main className="max-w-7xl mx-auto px-4 py-16">
       <h1 className="text-4xl font-bold mb-8">Design Tokens</h1>
 
       <section className="mb-16">
-        <h2 className="text-2xl font-semibold mb-6">Colors</h2>
+        <h2 className="text-2xl font-semibold mb-6">Artivism Palette</h2>
         <div className="grid md:grid-cols-3 gap-4">
-          {colors.map((color) => (
-            <div
-              key={color.name}
-              className="border border-border rounded-md overflow-hidden"
-            >
-              <div
-                className={`${color.bg} ${color.text} p-8 text-center font-semibold`}
-              >
+          {artivisMColors.map((color) => (
+            <div key={color.name} className="border rounded-md overflow-hidden" style={{ borderColor: "var(--color-border)" }}>
+              <div className="p-8 text-center font-semibold" style={{ backgroundColor: `var(${color.var})`, color: color.name.includes("wheatpaste") || color.name.includes("flashmob") || color.name === "green" ? "#000" : "#fff" }}>
                 {color.name}
               </div>
-              <div className="p-3 bg-surface-muted">
+              <div className="p-3" style={{ backgroundColor: "var(--color-surface)" }}>
                 <code className="text-sm">{color.var}</code>
               </div>
             </div>
@@ -76,49 +44,13 @@ export default function TokensPage() {
       </section>
 
       <section className="mb-16">
-        <h2 className="text-2xl font-semibold mb-6">Typography Scale</h2>
-        <div className="space-y-4">
-          {typography.map((size) => (
-            <div
-              key={size}
-              className="flex items-center gap-6 border-b border-border pb-4"
-            >
-              <code className="text-sm text-text-muted w-20">{size}</code>
-              <p className={`text-${size}`}>
-                The quick brown fox jumps over the lazy dog
-              </p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="mb-16">
-        <h2 className="text-2xl font-semibold mb-6">Spacing</h2>
-        <div className="space-y-4">
-          {spacing.map((space) => (
-            <div key={space} className="flex items-center gap-6">
-              <code className="text-sm text-text-muted w-20">
-                spacing-{space}
-              </code>
-              <div
-                className="bg-accent h-6"
-                style={{ width: `${space * 0.25}rem` }}
-              ></div>
-              <span className="text-sm text-text-muted">
-                ({space * 0.25}rem)
-              </span>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section>
-        <h2 className="text-2xl font-semibold mb-6">Border Radius</h2>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-          {radius.map((r) => (
-            <div key={r} className="text-center">
-              <div className={`bg-accent h-24 rounded-${r} mb-2`}></div>
-              <code className="text-sm">rounded-{r}</code>
+        <h2 className="text-2xl font-semibold mb-6">Semantic Tokens</h2>
+        <div className="grid md:grid-cols-3 gap-4">
+          {semanticColors.map((color) => (
+            <div key={color.name} className="border rounded-md overflow-hidden" style={{ borderColor: "var(--color-border)" }}>
+              <div className="p-8 text-center" style={{ backgroundColor: `var(${color.var})` }}>
+                {color.name} → {color.maps}
+              </div>
             </div>
           ))}
         </div>

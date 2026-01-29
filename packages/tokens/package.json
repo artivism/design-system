@@ -1,31 +1,17 @@
 {
   "name": "@artivism/tokens",
-  "version": "0.1.0",
-  "description": "Design tokens for Artivism Design System",
-  "main": "./dist/index.css",
+  "version": "0.1.1",
+  "type": "module",
   "exports": {
-    ".": "./dist/index.css",
+    ".": "./src/index.ts",
+    "./css": "./dist/index.css",
     "./base": "./dist/base.css"
   },
   "files": [
-    "dist"
+    "dist",
+    "src"
   ],
   "scripts": {
-    "build": "mkdir -p dist && cp src/*.css dist/",
-    "dev": "npm run build"
-  },
-  "keywords": [
-    "design-system",
-    "design-tokens",
-    "css",
-    "artivism"
-  ],
-  "author": "artivism",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/artivism/design-system.git",
-    "directory": "packages/tokens"
-  },
-  "homepage": "https://design.artivism.it"
+    "build": "node build.js"
+  }
 }

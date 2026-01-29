@@ -1,18 +1,43 @@
 @theme {
-  /* Colors - semantic roles */
-  --color-surface: #ffffff;
-  --color-surface-muted: #f5f5f5;
-  --color-accent: #6366f1;
-  --color-accent-hover: #4f46e5;
-  --color-text: #171717;
-  --color-text-muted: #737373;
-  --color-border: #e5e5e5;
-  --color-error: #ef4444;
-  --color-success: #22c55e;
+  /* Artivism Palette (named) */
+  --artivism-blackout:    #121212;
+  --artivism-guerrilla:   #1c1c1c;
+  --artivism-hijack:      #212121;
+  --artivism-detour:      #2a2a2a;
+  --artivism-spoof:       #333333;
 
-  /* Typography */
-  --font-sans: system-ui, -apple-system, sans-serif;
-  --font-mono: ui-monospace, monospace;
+  --artivism-pasteup:     #666666;
+  --artivism-stickerbomb: #a1a1aa;
+  --artivism-flashmob:    #d4d4d8;
+  --artivism-wheatpaste:  #ffffff;
+
+  --artivism-green:       #66ff99;
+  --artivism-green-hover: color-mix(in oklab, var(--artivism-green), black 15%);
+
+  --artivism-alert-red:     #ef4444;
+  --artivism-success-green: #22c55e;
+
+  /* Semantic mapping */
+  --color-canvas:           var(--artivism-blackout);
+  --color-surface:          var(--artivism-guerrilla);
+  --color-surface-muted:    var(--artivism-hijack);
+  --color-surface-elevated: var(--artivism-spoof);
+
+  --color-accent:       var(--artivism-green);
+  --color-accent-hover: var(--artivism-green-hover);
+
+  --color-text:          var(--artivism-wheatpaste);
+  --color-text-muted:    var(--artivism-stickerbomb);
+  --color-text-tertiary: var(--artivism-pasteup);
+
+  --color-border: var(--artivism-detour);
+
+  --color-error:   var(--artivism-alert-red);
+  --color-success: var(--artivism-success-green);
+
+  /* Typography (Geist) */
+  --font-sans: Geist, ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, monospace;
 
   --text-xs: 0.75rem;
   --text-sm: 0.875rem;
@@ -34,4 +59,33 @@
   --radius-md: 0.5rem;
   --radius-lg: 0.75rem;
   --radius-full: 9999px;
+}
+
+:root {
+  /* shadcn semantic variables */
+  --background: var(--artivism-blackout);
+  --foreground: var(--artivism-wheatpaste);
+  --card: var(--artivism-guerrilla);
+  --card-foreground: var(--artivism-wheatpaste);
+  --popover: var(--artivism-spoof);
+  --popover-foreground: var(--artivism-wheatpaste);
+  --primary: var(--artivism-green);
+  --primary-foreground: var(--artivism-blackout);
+  --secondary: var(--artivism-hijack);
+  --secondary-foreground: var(--artivism-flashmob);
+  --muted: var(--artivism-hijack);
+  --muted-foreground: var(--artivism-stickerbomb);
+  --accent: var(--artivism-green);
+  --accent-foreground: var(--artivism-blackout);
+  --destructive: var(--artivism-alert-red);
+  --border: var(--artivism-detour);
+  --input: var(--artivism-detour);
+  --ring: var(--artivism-green);
+  --radius: 0.5rem;
+}
+
+/* Aggiungi anche in @theme per generare utility */
+@theme {
+  --background: var(--artivism-blackout);
+  --foreground: var(--artivism-wheatpaste);
 }

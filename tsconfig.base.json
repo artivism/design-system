@@ -3,20 +3,13 @@
     "target": "ES2022",
     "lib": ["ES2022", "DOM", "DOM.Iterable"],
     "module": "ESNext",
-    "moduleResolution": "bundler",
-    "resolveJsonModule": true,
-    "allowJs": true,
+    "moduleResolution": "Bundler",
+    "jsx": "preserve",
     "strict": true,
-    "noEmit": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "isolatedModules": true,
-    "baseUrl": ".",
-    "paths": {
-      "@artivism/tokens": ["./packages/tokens/src"],
-      "@artivism/ui": ["./packages/ui/src"],
-      "@artivism/ui/*": ["./packages/ui/src/*"]
-    }
+    "resolveJsonModule": true,
+    "isolatedModules": true
   }
 }

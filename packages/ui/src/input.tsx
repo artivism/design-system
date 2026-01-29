@@ -1,30 +1,21 @@
-import * as React from "react";
+import * as React from "react"
 
-export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
-  variant?: "default" | "error";
-  fullWidth?: boolean;
+import { cn } from "./lib/utils"
+
+function Input({ className, type, ...props }: React.ComponentProps<"input">) {
+  return (
+    <input
+      type={type}
+      data-slot="input"
+      className={cn(
+        "file:text-foreground placeholder:text-muted-foreground selection:bg-primary selection:text-primary-foreground dark:bg-input/30 border-input h-9 w-full min-w-0 rounded-md border bg-transparent px-3 py-1 text-base shadow-xs transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm",
+        "focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px]",
+        "aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive",
+        className
+      )}
+      {...props}
+    />
+  )
 }
 
-export const Input = React.forwardRef<HTMLInputElement, InputProps>(
-  ({ className = "", variant = "default", fullWidth = false, ...props }, ref) => {
-    const baseStyles =
-      "px-4 py-2 rounded-md border transition-colors focus:outline-none focus:ring-2 focus:ring-accent";
-
-    const variantStyles = {
-      default: "border-border bg-surface text-text placeholder:text-text-muted",
-      error: "border-error bg-surface text-text placeholder:text-text-muted focus:ring-error",
-    };
-
-    const widthStyles = fullWidth ? "w-full" : "";
-
-    return (
-      <input
-        ref={ref}
-        className={`${baseStyles} ${variantStyles[variant]} ${widthStyles} ${className}`}
-        {...props}
-      />
-    );
-  }
-);
-
-Input.displayName = "Input";
+export { Input }
