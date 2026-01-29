@@ -1,10 +1,10 @@
 import { defineConfig } from "tsup";
 
 export default defineConfig({
-  entry: ["src/index.tsx", "src/button.tsx", "src/card.tsx"],
+  entry: ["src/index.tsx", "src/button.tsx", "src/card.tsx", "src/input.tsx", "src/badge.tsx"],
   format: ["esm"],
   dts: true,
-  splitting: false,
+  sourcemap: false,
   clean: true,
-  external: ["react", "@artivism/tokens"],
+  target: "es2022",
 });
