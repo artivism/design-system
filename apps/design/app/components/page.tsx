@@ -8,7 +8,7 @@ export default function ComponentsPage() {
     <div className="container mx-auto py-12 space-y-16">
       <div>
         <h1 className="text-4xl font-bold mb-2">Components</h1>
-        <p className="text-muted-foreground">@artivism/ui component library powered by shadcn/ui</p>
+        <p className="text-muted-foreground">@artivism/ui component library</p>
       </div>
 
       {/* Button */}

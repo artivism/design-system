@@ -1,50 +1,52 @@
 @theme {
-  /* Artivism Palette (named) */
-  --artivism-blackout:    #121212;
-  --artivism-guerrilla:   #1c1c1c;
-  --artivism-hijack:      #212121;
-  --artivism-detour:      #2a2a2a;
-  --artivism-spoof:       #333333;
-
-  --artivism-pasteup:     #666666;
+  /* Artivism Palette */
+  --artivism-blackout: #121212;
+  --artivism-guerrilla: #1c1c1c;
+  --artivism-hijack: #212121;
+  --artivism-detour: #2a2a2a;
+  --artivism-spoof: #333333;
+  --artivism-pasteup: #666666;
   --artivism-stickerbomb: #a1a1aa;
-  --artivism-flashmob:    #d4d4d8;
-  --artivism-wheatpaste:  #ffffff;
-
-  --artivism-green:       #66ff99;
+  --artivism-flashmob: #d4d4d8;
+  --artivism-wheatpaste: #ffffff;
+  --artivism-green: #66ff99;
   --artivism-green-hover: color-mix(in oklab, var(--artivism-green), black 15%);
-
-  --artivism-alert-red:     #ef4444;
+  --artivism-alert-red: #ef4444;
   --artivism-success-green: #22c55e;
 
-  /* Semantic mapping */
-  --color-canvas:           var(--artivism-blackout);
-  --color-surface:          var(--artivism-guerrilla);
-  --color-surface-muted:    var(--artivism-hijack);
+  /* Semantic (per utility Tailwind) */
+  --color-canvas: var(--artivism-blackout);
+  --color-surface: var(--artivism-guerrilla);
+  --color-surface-muted: var(--artivism-hijack);
   --color-surface-elevated: var(--artivism-spoof);
-
-  --color-accent:       var(--artivism-green);
+  --color-accent: var(--artivism-green);
   --color-accent-hover: var(--artivism-green-hover);
-
-  --color-text:          var(--artivism-wheatpaste);
-  --color-text-muted:    var(--artivism-stickerbomb);
+  --color-text: var(--artivism-wheatpaste);
+  --color-text-muted: var(--artivism-stickerbomb);
   --color-text-tertiary: var(--artivism-pasteup);
-
   --color-border: var(--artivism-detour);
-
-  --color-error:   var(--artivism-alert-red);
+  --color-error: var(--artivism-alert-red);
   --color-success: var(--artivism-success-green);
 
-  /* Typography (Geist) */
+  /* Shadcn components (genera bg-primary, text-primary-foreground, etc.) */
+  --color-background: var(--artivism-blackout);
+  --color-foreground: var(--artivism-wheatpaste);
+  --color-card: var(--artivism-guerrilla);
+  --color-card-foreground: var(--artivism-wheatpaste);
+  --color-primary: var(--artivism-green);
+  --color-primary-foreground: var(--artivism-blackout);
+  --color-secondary: var(--artivism-hijack);
+  --color-secondary-foreground: var(--artivism-flashmob);
+  --color-muted: var(--artivism-hijack);
+  --color-muted-foreground: var(--artivism-stickerbomb);
+  --color-accent-foreground: var(--artivism-blackout);
+  --color-destructive: var(--artivism-alert-red);
+  --color-input: var(--artivism-detour);
+  --color-ring: var(--artivism-green);
+
+  /* Typography */
   --font-sans: Geist, ui-sans-serif, system-ui, sans-serif;
   --font-mono: "Geist Mono", ui-monospace, monospace;
-
-  --text-xs: 0.75rem;
-  --text-sm: 0.875rem;
-  --text-base: 1rem;
-  --text-lg: 1.125rem;
-  --text-xl: 1.25rem;
-  --text-2xl: 1.5rem;
 
   /* Spacing */
   --spacing-1: 0.25rem;
@@ -55,6 +57,7 @@
   --spacing-8: 2rem;
 
   /* Radius */
+  --radius: 0.5rem;
   --radius-sm: 0.25rem;
   --radius-md: 0.5rem;
   --radius-lg: 0.75rem;
@@ -62,13 +65,11 @@
 }
 
 :root {
-  /* shadcn semantic variables */
+  /* Keep shadcn vars for non-Tailwind use */
   --background: var(--artivism-blackout);
   --foreground: var(--artivism-wheatpaste);
   --card: var(--artivism-guerrilla);
   --card-foreground: var(--artivism-wheatpaste);
-  --popover: var(--artivism-spoof);
-  --popover-foreground: var(--artivism-wheatpaste);
   --primary: var(--artivism-green);
   --primary-foreground: var(--artivism-blackout);
   --secondary: var(--artivism-hijack);
@@ -82,10 +83,4 @@
   --input: var(--artivism-detour);
   --ring: var(--artivism-green);
   --radius: 0.5rem;
-}
-
-/* Aggiungi anche in @theme per generare utility */
-@theme {
-  --background: var(--artivism-blackout);
-  --foreground: var(--artivism-wheatpaste);
 }

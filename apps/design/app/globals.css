@@ -1,13 +1,76 @@
 @import "tailwindcss";
 @import "@artivism/tokens/css";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
 
 @source "../../packages/ui/src/**/*.{ts,tsx}";
 @source "./app/**/*.{ts,tsx}";
+
+@layer utilities {
+  /* Background colors */
+  .bg-primary { background-color: var(--primary); }
+  .bg-primary-foreground { background-color: var(--primary-foreground); }
+  .bg-secondary { background-color: var(--secondary); }
+  .bg-secondary-foreground { background-color: var(--secondary-foreground); }
+  .bg-destructive { background-color: var(--destructive); }
+  .bg-muted { background-color: var(--muted); }
+  .bg-muted-foreground { background-color: var(--muted-foreground); }
+  .bg-accent { background-color: var(--accent); }
+  .bg-accent-foreground { background-color: var(--accent-foreground); }
+  .bg-card { background-color: var(--card); }
+  .bg-background { background-color: var(--background); }
+
+  /* Text colors */
+  .text-primary { color: var(--primary); }
+  .text-primary-foreground { color: var(--primary-foreground); }
+  .text-secondary-foreground { color: var(--secondary-foreground); }
+  .text-destructive { color: var(--destructive); }
+  .text-muted-foreground { color: var(--muted-foreground); }
+  .text-accent-foreground { color: var(--accent-foreground); }
+  .text-card-foreground { color: var(--card-foreground); }
+  .text-foreground { color: var(--foreground); }
+
+  /* Border colors */
+  .border-input { border-color: var(--input); }
+  .border-ring { border-color: var(--ring); }
+  .border-destructive { border-color: var(--destructive); }
+  .border-border { border-color: var(--border); }
+
+  /* Ring colors */
+  .ring-ring { --tw-ring-color: var(--ring); }
+  .ring-destructive { --tw-ring-color: var(--destructive); }
+
+  /* Hover states */
+  .hover\:bg-primary\/90:hover { background-color: color-mix(in srgb, var(--primary) 90%, transparent); }
+  .hover\:bg-secondary\/80:hover { background-color: color-mix(in srgb, var(--secondary) 80%, transparent); }
+  .hover\:bg-destructive\/90:hover { background-color: color-mix(in srgb, var(--destructive) 90%, transparent); }
+  .hover\:bg-accent:hover { background-color: var(--accent); }
+  .hover\:text-accent-foreground:hover { color: var(--accent-foreground); }
+}
 
 @layer base {
   body {
     background-color: var(--color-canvas);
     color: var(--color-text);
     font-family: var(--font-sans);
+  }
+}
+
+:root { --sidebar: hsl(0 0% 98%); --sidebar-foreground: hsl(240 5.3% 26.1%); --sidebar-primary: hsl(240 5.9% 10%); --sidebar-primary-foreground: hsl(0 0% 98%); --sidebar-accent: hsl(240 4.8% 95.9%); --sidebar-accent-foreground: hsl(240 5.9% 10%); --sidebar-border: hsl(220 13% 91%); --sidebar-ring: hsl(217.2 91.2% 59.8%);
+}
+
+.dark { --sidebar: hsl(240 5.9% 10%); --sidebar-foreground: hsl(240 4.8% 95.9%); --sidebar-primary: hsl(224.3 76.3% 48%); --sidebar-primary-foreground: hsl(0 0% 100%); --sidebar-accent: hsl(240 3.7% 15.9%); --sidebar-accent-foreground: hsl(240 4.8% 95.9%); --sidebar-border: hsl(240 3.7% 15.9%); --sidebar-ring: hsl(217.2 91.2% 59.8%);
+}
+
+@theme inline { --color-sidebar: var(--sidebar); --color-sidebar-foreground: var(--sidebar-foreground); --color-sidebar-primary: var(--sidebar-primary); --color-sidebar-primary-foreground: var(--sidebar-primary-foreground); --color-sidebar-accent: var(--sidebar-accent); --color-sidebar-accent-foreground: var(--sidebar-accent-foreground); --color-sidebar-border: var(--sidebar-border); --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
   }
 }

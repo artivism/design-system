@@ -1,17 +1,26 @@
 {
   "name": "@artivism/tokens",
-  "version": "0.1.2",
-  "type": "module",
-  "exports": {
-    ".": "./src/index.ts",
-    "./css": "./dist/index.css",
-    "./base": "./dist/base.css"
-  },
+  "version": "0.2.0",
+  "description": "Design tokens for Artivism Design System",
+  "main": "dist/index.css",
+  "types": "dist/index.d.ts",
   "files": [
-    "dist",
-    "src"
+    "dist"
   ],
   "scripts": {
     "build": "node build.js"
+  },
+  "keywords": [
+    "design-tokens",
+    "css",
+    "tailwind",
+    "artivism"
+  ],
+  "author": "Artivism",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/artivism/design-system.git",
+    "directory": "packages/tokens"
   }
 }
