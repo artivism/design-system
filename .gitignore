@@ -12,3 +12,6 @@ coverage/
 
 # Local documentation
 guide.md
+
+# OpenNext
+.open-next/
